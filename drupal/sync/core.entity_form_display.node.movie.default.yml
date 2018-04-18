@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.movie.body
+    - field.field.node.movie.field_movie_genres
     - field.field.node.movie.field_movie_homepage
     - field.field.node.movie.field_movie_keywords
     - field.field.node.movie.field_movie_votes
@@ -32,6 +33,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_movie_genres:
+    weight: 125
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_movie_homepage:
     weight: 122
     settings:
