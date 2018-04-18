@@ -1,0 +1,5 @@
+name: Migrate Movies
+description: Migrates movies from a CSV file.
+package: Wundercon
+type: module
+core: 8.x

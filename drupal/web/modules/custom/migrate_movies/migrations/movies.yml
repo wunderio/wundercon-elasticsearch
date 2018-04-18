@@ -1,0 +1,70 @@
+id: movies
+label: Movies
+migration_group: wundercon
+source:
+  plugin: migrate_movies_csv
+  path: movies.csv
+  header_row_count: 1
+  delimiter: ','
+  keys:
+    - id
+  column_names:
+    -
+      budget: Budget
+    -
+      genres: Genres
+    -
+      homepage: Homepage
+    -
+      id: ID
+    -
+      keywords: Keywords
+    -
+      original_language: 'Original language'
+    -
+      original_title: 'Original title'
+    -
+      overview: Overview
+    -
+      popularity: Popularity
+    -
+      production_companies: 'Production companies'
+    -
+      production_countries: 'Production countries'
+    -
+      release_date: 'Release date'
+    -
+      revenue: Revenue
+    -
+      runtime: Runtime
+    -
+      spoken_languages: 'Spoken languages'
+    -
+      status: Status
+    -
+      tagline: Tagline
+    -
+      title: Title
+    -
+      vote_average: 'Vote average'
+    -
+      vote_count: 'Vote count'
+destination:
+  plugin: entity:node
+process:
+  name: original_title
+  type:
+    plugin: default_value
+    default_value: movie
+  title: title
+  field_movie_votes: vote_count
+  field_movie_keywords:
+    plugin: entity_generate
+    source: keywords
+    value_key: name
+    bundle: keywords
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_movie_homepage: homepage
+  body/value: overview
+
