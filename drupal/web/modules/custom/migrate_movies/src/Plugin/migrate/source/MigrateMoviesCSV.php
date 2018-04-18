@@ -30,6 +30,19 @@ class MigrateMoviesCSV extends MigrateSourceCSV {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
+    $this->prepareKeywords($row);
+    $this->prepareGenres($row);
+    return parent::prepareRow($row);
+  }
+
+  /**
+   * Prepares keywords.
+   *
+   * @param \Drupal\migrate\Row $row
+   *
+   * @throws \Exception
+   */
+  protected function prepareKeywords(Row $row) {
     $keywords = json_decode($row->getSourceProperty('keywords'));
 
     // Proceed if keywords can be extracted.
@@ -44,7 +57,30 @@ class MigrateMoviesCSV extends MigrateSourceCSV {
     }
 
     $row->setSourceProperty('keywords', $keywords);
-    return parent::prepareRow($row);
+  }
+
+  /**
+   * Prepares genres.
+   *
+   * @param \Drupal\migrate\Row $row
+   *
+   * @throws \Exception
+   */
+  protected function prepareGenres(Row $row) {
+    $genres = json_decode($row->getSourceProperty('genres'));
+
+    // Proceed if genres can be extracted.
+    if (is_array($genres)) {
+      $genres = array_map(function($item) {
+        return $item->name;
+      }, $genres);
+    }
+    // Set keywords to an empty array if decoding fails.
+    else {
+      $genres = [];
+    }
+
+    $row->setSourceProperty('genres', $genres);
   }
 
 }

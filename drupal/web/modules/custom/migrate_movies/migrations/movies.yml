@@ -65,6 +65,13 @@ process:
     bundle: keywords
     entity_type: taxonomy_term
     ignore_case: true
+  field_movie_genres:
+    plugin: entity_generate
+    source: genres
+    value_key: name
+    bundle: genres
+    entity_type: taxonomy_term
+    ignore_case: true
   field_movie_homepage: homepage
   body/value: overview
 
