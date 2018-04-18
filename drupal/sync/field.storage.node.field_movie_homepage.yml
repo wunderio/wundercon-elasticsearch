@@ -1,0 +1,19 @@
+uuid: 56af90e6-22da-4f41-8cfe-3b8daaf0ca87
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_movie_homepage
+field_name: field_movie_homepage
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

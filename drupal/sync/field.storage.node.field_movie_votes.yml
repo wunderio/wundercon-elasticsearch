@@ -1,0 +1,20 @@
+uuid: ad76fa1f-236e-4145-aef8-65f917a7e771
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_movie_votes
+field_name: field_movie_votes
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

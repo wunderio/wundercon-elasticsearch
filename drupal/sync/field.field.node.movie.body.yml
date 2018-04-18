@@ -1,18 +1,16 @@
-uuid: dc33315d-0987-4b9d-b3cd-d194de964737
+uuid: a8cff7bb-f8ed-4675-ae43-dfbb23402d53
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.article
+    - node.type.movie
   module:
     - text
-_core:
-  default_config_hash: Ay3b2hq42cpQTFB_lNu8S2ZxuVIY6-dlBsc7vLeJ-YY
-id: node.article.body
+id: node.movie.body
 field_name: body
 entity_type: node
-bundle: article
+bundle: movie
 label: Body
 description: ''
 required: false

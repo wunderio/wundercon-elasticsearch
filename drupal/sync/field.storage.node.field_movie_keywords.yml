@@ -1,14 +1,12 @@
-uuid: 7670d14f-6974-4715-9966-f96dd7d57151
+uuid: e54f14e2-8c5c-4955-9f03-9c2a268f6397
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-_core:
-  default_config_hash: WpOE_bs8Bs_HY2ns7n2r__de-xno0-Bxkqep5-MsHAs
-id: node.field_tags
-field_name: field_tags
+id: node.field_movie_keywords
+field_name: field_movie_keywords
 entity_type: node
 type: entity_reference
 settings:

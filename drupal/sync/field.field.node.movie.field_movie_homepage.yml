@@ -1,0 +1,23 @@
+uuid: 0c69ef41-1912-46dc-94b3-010e029a4f36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_homepage
+    - node.type.movie
+  module:
+    - link
+id: node.movie.field_movie_homepage
+field_name: field_movie_homepage
+entity_type: node
+bundle: movie
+label: Homepage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
