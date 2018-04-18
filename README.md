@@ -31,6 +31,7 @@ drush migrate:import movies
 Optional - log into Drupal:
 
 ```
-http://local.wundercon-elasticsearch.com/user/reset/1/1524073059/2W2ianyy5jkdETsLk19cCJgBeEJXhn_o-p80Efl12yA/login
+drush user:login --uri=http://local.wundercon-elasticsearch.com
 ```
 
+Open [https://local.wundercon-elasticsearch.com](https://local.wundercon-elasticsearch.com) and follow along!
