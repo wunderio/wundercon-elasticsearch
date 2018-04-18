@@ -57,7 +57,8 @@
         "wunderio/elasticsearch_helper": "6.x-dev",
         "drupal/migrate_source_csv": "^2.1",
         "drupal/migrate_plus": "^4.0-beta3",
-        "drupal/migrate_tools": "^4.0-beta3"
+        "drupal/migrate_tools": "^4.0-beta3",
+        "elasticsearch/elasticsearch": "~6.0"
     },
     "require-dev": {
         "codeception/codeception": "^2.2",
