@@ -20,12 +20,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_movie_homepage:
-    weight: 102
+    weight: 3
     label: above
     settings:
       trim_length: 80
@@ -37,15 +37,15 @@ content:
     type: link
     region: content
   field_movie_keywords:
-    weight: 103
+    weight: 2
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_movie_votes:
-    weight: 104
+    weight: 4
     label: above
     settings:
       thousand_separator: ''
@@ -54,6 +54,8 @@ content:
     type: number_integer
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
