@@ -30,14 +30,20 @@ class MigrateMoviesCSV extends MigrateSourceCSV {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    if ($keywords = json_decode($row->getSourceProperty('keywords'))) {
+    $keywords = json_decode($row->getSourceProperty('keywords'));
+
+    // Proceed if keywords can be extracted.
+    if (is_array($keywords)) {
       $keywords = array_map(function($item) {
         return $item->name;
       }, $keywords);
-
-      $row->setSourceProperty('keywords', $keywords);
+    }
+    // Set keywords to an empty array if decoding fails.
+    else {
+      $keywords = [];
     }
 
+    $row->setSourceProperty('keywords', $keywords);
     return parent::prepareRow($row);
   }
 
