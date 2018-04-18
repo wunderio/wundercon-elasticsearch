@@ -13,6 +13,32 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wunderio/elasticsearch_helper",
+                "version": "6.x-dev",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/wunderio/elasticsearch_helper.git",
+                    "type": "git",
+                    "reference": "8.x-6.x"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wunderio/migrate_source_example",
+                "version": "8.2-dev",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/wunderio/migrate_source_example.git",
+                    "type": "git",
+                    "reference": "8.2.x"
+                }
+            }
         }
     ],
     "require": {
@@ -27,7 +53,11 @@
         "drupal/config_installer": "~1.0",
         "drupal/warden": "*",
         "drupal/simplei": "^1.0",
-        "wunderio/drupal-ping": "^1.0"
+        "wunderio/drupal-ping": "^1.0",
+        "wunderio/elasticsearch_helper": "6.x-dev",
+        "drupal/migrate_source_csv": "^2.1",
+        "drupal/migrate_plus": "^4.0-beta3",
+        "drupal/migrate_tools": "^4.0-beta3"
     },
     "require-dev": {
         "codeception/codeception": "^2.2",
