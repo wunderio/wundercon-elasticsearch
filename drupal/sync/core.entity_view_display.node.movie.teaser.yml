@@ -25,4 +25,7 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_movie_homepage: true
+  field_movie_keywords: true
+  field_movie_votes: true
