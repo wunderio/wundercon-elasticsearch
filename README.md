@@ -21,11 +21,17 @@ cd /vagrant/drupal
 ./build.sh create
 ```
 
-Import the dataset:
+Create the Elasticsearch indices:
 
 ```
 cd web
-drush migrate:import movies
+drush elasticsearch-helper-setup content_index_node
+```
+
+Import the dataset (limit is added to save a bit of time):
+
+```
+drush migrate:import movies --limit=50
 ```
 
 Optional - log into Drupal:

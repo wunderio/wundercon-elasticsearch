@@ -52,11 +52,13 @@ source:
 destination:
   plugin: entity:node
 process:
-  name: original_title
   type:
     plugin: default_value
     default_value: movie
   title: title
+  uid:
+    plugin: default_value
+    default_value: 1
   field_movie_votes: vote_count
   field_movie_keywords:
     plugin: entity_generate

@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.movie.body
+    - field.field.node.movie.field_movie_genres
+    - field.field.node.movie.field_movie_homepage
+    - field.field.node.movie.field_movie_keywords
+    - field.field.node.movie.field_movie_votes
     - node.type.movie
   module:
     - text
@@ -17,16 +21,15 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
     region: content
 hidden:
   field_movie_genres: true
   field_movie_homepage: true
   field_movie_keywords: true
   field_movie_votes: true
+  links: true
+  search_result_excerpt: true
