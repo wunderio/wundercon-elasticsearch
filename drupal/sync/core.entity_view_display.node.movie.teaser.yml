@@ -26,6 +26,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_movie_genres: true
   field_movie_homepage: true
   field_movie_keywords: true
   field_movie_votes: true
