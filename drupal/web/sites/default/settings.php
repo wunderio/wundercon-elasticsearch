@@ -82,6 +82,12 @@ $settings['update_free_access'] = FALSE;
  */
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
+// Configure elasticsearch_helper_content.
+$settings['elasticsearch_helper_content'] = [
+// For the demo,we need also the default normalized semantic content fields.
+//  'skip_default_normalize' => TRUE, // or _any_ other value.
+];
+
 /**
  * Environment specific override configuration, if available.
  */
