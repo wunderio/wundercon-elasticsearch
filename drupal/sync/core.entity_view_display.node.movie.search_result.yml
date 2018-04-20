@@ -11,35 +11,28 @@ dependencies:
     - field.field.node.movie.field_movie_votes
     - node.type.movie
   module:
+    - text
     - user
 id: node.movie.search_result
 targetEntityType: node
 bundle: movie
 mode: search_result
 content:
-  field_movie_genres:
-    weight: 1
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_movie_keywords:
+  body:
+    type: text_default
     weight: 0
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   search_result_excerpt:
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
+  field_movie_genres: true
   field_movie_homepage: true
+  field_movie_keywords: true
   field_movie_votes: true
   links: true

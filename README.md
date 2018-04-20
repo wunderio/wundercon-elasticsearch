@@ -34,6 +34,12 @@ Import the dataset (limit is added to save a bit of time):
 drush migrate:import movies --limit=50
 ```
 
+To reindex the content:
+```
+drush elasticsearch:helper:reindex content_index_node
+drush queue-run elasticsearch_helper_indexing
+```
+
 Optional - log into Drupal:
 
 ```
