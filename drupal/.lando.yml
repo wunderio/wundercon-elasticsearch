@@ -9,7 +9,7 @@ config:
   via: nginx
   php: '7.1'
   database: mariadb:10.1
-  #xdebug: true
+  xdebug: true
 
 tooling:
   build.sh:
