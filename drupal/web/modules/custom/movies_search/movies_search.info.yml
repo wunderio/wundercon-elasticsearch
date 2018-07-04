@@ -3,4 +3,3 @@ description: Provides search of movies.
 package: Wundercon
 type: module
 core: 8.x
-hidden: true
