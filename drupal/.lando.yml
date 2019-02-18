@@ -1,4 +1,4 @@
-name: wunderlando
+name: wundercon-elasticsearch
 recipe: drupal8
 
 compose:
@@ -24,28 +24,30 @@ tooling:
       - ./vendor/bin/codecept
       - "--env=lando"
 
-services:  
+services:
   mailhog:
     type: mailhog
     hogfrom:
       - appserver
-  
+
   appserver:
     extras:
       - "apt-get update -y"
       - "apt-get install python-yaml -y"
     overrides:
-      services:
-        environment:
-          WKV_SITE_ENV: lando
-          DB_PASS_DRUPAL: drupal8
-          DB_USER_DRUPAL: drupal8
-          DB_HOST_DRUPAL: database
-          DB_NAME_DRUPAL: drupal8
+      environment:
+        WKV_SITE_ENV: lando
+        DB_PASS_DRUPAL: drupal8
+        DB_USER_DRUPAL: drupal8
+        DB_HOST_DRUPAL: database
+        DB_NAME_DRUPAL: drupal8
+
+  elasticsearch:
+    type: elasticsearch:6
 
 proxy:
   mailhog:
-    - mail.lndo.site
+    - wundercon-elasticsearch-mail.lndo.site
 
 events:
   # Clear caches after a database import
