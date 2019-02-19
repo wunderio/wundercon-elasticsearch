@@ -206,7 +206,7 @@ class Maker:
             ] + params)
         else:
             command_status = self._composer([
-                '-d=' + self.temp_build_dir,
+                '--working-dir=' + self.temp_build_dir,
                 'install'
             ] + params)
 
@@ -358,7 +358,11 @@ class Maker:
     # Execute a drush command
     def drush_command(self, command):
             drush_command = command.split(' ')
-            return self._drush(drush_command, False)
+
+            command_status = self._drush(drush_command, False)
+
+            if not command_status:
+                raise BuildError("Drush command failed")
 
     def append(self, command):
         files = command.split(">")
